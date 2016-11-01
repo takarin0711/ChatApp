@@ -8,16 +8,46 @@ import android.support.v7.widget.Toolbar;
 import android.view.View;
 import android.view.Menu;
 import android.view.MenuItem;
+import android.widget.ArrayAdapter;
+import android.widget.Button;
+import android.widget.EditText;
+import android.widget.ListView;
+import android.widget.TextView;
 
-public class MainActivity extends AppCompatActivity {
+import static android.R.attr.button;
 
-    // test
+public class MainActivity extends AppCompatActivity implements View.OnClickListener{
+    public EditText editText;
+    ArrayAdapter<String> adapter;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
         Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
+
+        ListView listView = new ListView(this);
+        setContentView(listView);
+
+        adapter=new ArrayAdapter<String>(this, android.R.layout.simple_list_item_1);
+
+        Button button = (Button) findViewById(R.id.button1);
+        button.setOnClickListener(this);
+
+        editText = (EditText) findViewById(R.id.editText);
+
+        listView.setAdapter(adapter);
+    }
+
+    @Override
+    public void onClick(View v) {
+        int id = v.getId();
+
+        if(id == R.id.button1) {
+            adapter.add(editText.getText().toString());
+        }
+
     }
 
     @Override
@@ -41,4 +71,5 @@ public class MainActivity extends AppCompatActivity {
 
         return super.onOptionsItemSelected(item);
     }
+
 }

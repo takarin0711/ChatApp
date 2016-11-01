@@ -1,6 +1,7 @@
 package com.example.takay_000.chatapp;
 
 import android.os.Bundle;
+import android.os.Handler;
 import android.support.design.widget.FloatingActionButton;
 import android.support.design.widget.Snackbar;
 import android.support.v7.app.AppCompatActivity;
@@ -15,6 +16,7 @@ import android.widget.ListView;
 import android.widget.TextView;
 
 import static android.R.attr.button;
+import static android.R.attr.id;
 
 public class MainActivity extends AppCompatActivity implements View.OnClickListener{
     public EditText editText;
@@ -27,28 +29,35 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
 
-        ListView listView = new ListView(this);
-        setContentView(listView);
-
-        adapter=new ArrayAdapter<String>(this, android.R.layout.simple_list_item_1);
+        ListView listView=(ListView)findViewById(R.id.ListView);
 
         Button button = (Button) findViewById(R.id.button1);
         button.setOnClickListener(this);
 
+        adapter=new ArrayAdapter<String>(this, android.R.layout.simple_list_item_1);
+
         editText = (EditText) findViewById(R.id.editText);
 
         listView.setAdapter(adapter);
+
     }
 
     @Override
     public void onClick(View v) {
-        int id = v.getId();
 
-        if(id == R.id.button1) {
-            adapter.add(editText.getText().toString());
-        }
+        adapter.add("Taka: "+editText.getText().toString());
+
+        // 1秒後に応答
+        new Handler().postDelayed(func, 1000);
 
     }
+
+    private final Runnable func= new Runnable() {
+        @Override
+        public void run() {
+            adapter.add("Computer: "+editText.getText().toString());
+        }
+    };
 
     @Override
     public boolean onCreateOptionsMenu(Menu menu) {

@@ -30,7 +30,7 @@ public class CustomAdapter extends ArrayAdapter<CustomData> {
 
         // convertViewは使い回しされている可能性があるのでnullの時だけ新しく作る
         if (null == convertView) {
-            convertView = layoutInflater_.inflate(R.layout.content_main, null);
+            convertView = layoutInflater_.inflate(R.layout.list, null);
         }
 
         // CustomDataのデータをViewの各Widgetにセットする
@@ -38,9 +38,9 @@ public class CustomAdapter extends ArrayAdapter<CustomData> {
         imageView = (ImageView)convertView.findViewById(R.id.imageView);
         imageView.setImageBitmap(item.getImageData());
 
-        EditText editText;
-        editText = (EditText) convertView.findViewById(R.id.editText);
-        editText.setText(item.getTextData());
+        TextView textView;
+        textView = (TextView) convertView.findViewById(R.id.textView);
+        textView.setText(item.getTextData());
 
         return convertView;
     }

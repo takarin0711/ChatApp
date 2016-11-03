@@ -30,6 +30,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
     CustomAdapter customAdapter;
     // リソースに準備した画像ファイルからBitmapを作成しておく
     Bitmap image;
+    Bitmap image2;
     // データの作成
     List<CustomData> objects = new ArrayList<CustomData>();
 
@@ -41,14 +42,17 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         setSupportActionBar(toolbar);
 
         image = BitmapFactory.decodeResource(getResources(), R.mipmap.ic_launcher);
+        image2 = BitmapFactory.decodeResource(getResources(), R.mipmap.computer);
 
 
-
-
-        ListView listView=(ListView)findViewById(R.id.ListView);
 
         Button button = (Button) findViewById(R.id.button1);
         button.setOnClickListener(this);
+
+        /*CustomData item1 = new CustomData();
+        item1.setImagaData(image);
+        item1.setTextData("はじめ");
+        objects.add(item1);*/
 
 
         // adapter=new ArrayAdapter<String>(this, android.R.layout.simple_list_item_1);
@@ -56,6 +60,8 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         customAdapter = new CustomAdapter(this, 0, objects);
 
         editText = (EditText) findViewById(R.id.editText);
+
+        ListView listView=(ListView)findViewById(R.id.ListView);
 
         listView.setAdapter(customAdapter);
 
@@ -67,9 +73,9 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         CustomData item1 = new CustomData();
         item1.setImagaData(image);
         item1.setTextData("taka: "+editText.getText().toString());
-        customAdapter.add(item1);
+        objects.add(item1);
 
-        //adapter.add("Taka: "+editText.getText().toString());
+        // adapter.add("Taka: "+editText.getText().toString());
 
         // 1秒後に応答
         new Handler().postDelayed(func, 1000);
@@ -80,9 +86,9 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         @Override
         public void run() {
             CustomData item2 = new CustomData();
-            item2.setImagaData(image);
+            item2.setImagaData(image2);
             item2.setTextData("Computer: "+editText.getText().toString());
-            customAdapter.add(item2);
+            objects.add(item2);
 
             // adapter.add("Computer: "+editText.getText().toString());
         }

@@ -44,18 +44,8 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         image = BitmapFactory.decodeResource(getResources(), R.mipmap.ic_launcher);
         image2 = BitmapFactory.decodeResource(getResources(), R.mipmap.computer);
 
-
-
         Button button = (Button) findViewById(R.id.button1);
         button.setOnClickListener(this);
-
-        /*CustomData item1 = new CustomData();
-        item1.setImagaData(image);
-        item1.setTextData("はじめ");
-        objects.add(item1);*/
-
-
-        // adapter=new ArrayAdapter<String>(this, android.R.layout.simple_list_item_1);
 
         customAdapter = new CustomAdapter(this, 0, objects);
 
@@ -75,8 +65,6 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         item1.setTextData("taka: "+editText.getText().toString());
         objects.add(item1);
 
-        // adapter.add("Taka: "+editText.getText().toString());
-
         // 1秒後に応答
         new Handler().postDelayed(func, 1000);
 
@@ -90,7 +78,6 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
             item2.setTextData("Computer: "+editText.getText().toString());
             objects.add(item2);
 
-            // adapter.add("Computer: "+editText.getText().toString());
         }
     };
 

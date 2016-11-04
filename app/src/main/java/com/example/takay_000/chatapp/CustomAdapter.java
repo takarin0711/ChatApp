@@ -33,14 +33,39 @@ public class CustomAdapter extends ArrayAdapter<CustomData> {
             convertView = layoutInflater_.inflate(R.layout.list, null);
         }
 
+        if(position % 2==0){
+            convertView = layoutInflater_.inflate(R.layout.list, null);
+            ImageView imageView;
+            imageView = (ImageView)convertView.findViewById(R.id.imageView);
+            imageView.setImageBitmap(item.getImageData());
+
+            TextView textView, name;
+            textView = (TextView) convertView.findViewById(R.id.textView);
+            textView.setText(item.getTextData());
+
+            name= (TextView) convertView.findViewById(R.id.Name1);
+            name.setText(item.getNameData());
+        }else{
+            convertView = layoutInflater_.inflate(R.layout.list2, null);
+            ImageView imageView;
+            imageView = (ImageView)convertView.findViewById(R.id.imageView2);
+            imageView.setImageBitmap(item.getImageData());
+
+            TextView textView, name;
+            textView = (TextView) convertView.findViewById(R.id.textView2);
+            textView.setText(item.getTextData());
+            name= (TextView) convertView.findViewById(R.id.Name2);
+            name.setText(item.getNameData());
+        }
+
         // CustomDataのデータをViewの各Widgetにセットする
-        ImageView imageView;
+        /* ImageView imageView;
         imageView = (ImageView)convertView.findViewById(R.id.imageView);
         imageView.setImageBitmap(item.getImageData());
 
         TextView textView;
         textView = (TextView) convertView.findViewById(R.id.textView);
-        textView.setText(item.getTextData());
+        textView.setText(item.getTextData()); */
 
         return convertView;
     }

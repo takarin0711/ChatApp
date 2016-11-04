@@ -62,7 +62,8 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
 
         CustomData item1 = new CustomData();
         item1.setImagaData(image);
-        item1.setTextData("taka: "+editText.getText().toString());
+        item1.setTextData(editText.getText().toString());
+        item1.setNameData("Taka");
         objects.add(item1);
 
         // 1秒後に応答
@@ -75,7 +76,8 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         public void run() {
             CustomData item2 = new CustomData();
             item2.setImagaData(image2);
-            item2.setTextData("Computer: "+editText.getText().toString());
+            item2.setTextData(editText.getText().toString());
+            item2.setNameData("Computer");
             objects.add(item2);
 
         }

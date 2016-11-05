@@ -14,7 +14,8 @@
     <LinearLayout
         android:orientation="horizontal"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content">
+        android:layout_height="wrap_content"
+        android:weightSum="1">
 
         <ImageView
             android:layout_width="60dip"
@@ -23,15 +24,15 @@
             android:layout_height="60dip" />
 
         <TextView
-            android:layout_height="wrap_content"
             android:id="@+id/textView"
             android:textSize="18sp"
             android:background="@mipmap/pink"
-            android:layout_width="240dp" />
+            android:layout_width="191dp"
+            android:layout_height="wrap_content" />
 
         <LinearLayout
             android:orientation="vertical"
-            android:layout_width="72dp"
+            android:layout_width="match_parent"
             android:layout_height="match_parent">
 
         </LinearLayout>

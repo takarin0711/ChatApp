@@ -7,9 +7,9 @@ import android.graphics.Bitmap;
  */
 
 public class CustomData {
-    private Bitmap imageData_;
-    private String textData_;
-    private String nameData_;
+    private Bitmap imageData_; // 画像
+    private String textData_;  // メッセージ内容
+    private String nameData_;  // 名前
 
     public void setImagaData(Bitmap image) {
         imageData_ = image;
@@ -27,7 +27,5 @@ public class CustomData {
 
     public void setNameData(String text) { nameData_ = text; }
 
-    public String getNameData() {
-        return nameData_;
-    }
+    public String getNameData() { return nameData_; }
 }

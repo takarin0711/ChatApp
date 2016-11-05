@@ -22,11 +22,11 @@
             android:layout_weight="1"></LinearLayout>
 
         <TextView
-            android:layout_width="240dp"
             android:layout_height="wrap_content"
             android:id="@+id/textView2"
             android:textSize="18sp"
-            android:background="@mipmap/yellow" />
+            android:background="@mipmap/yellow"
+            android:layout_width="191dp" />
 
         <ImageView
             app:srcCompat="@mipmap/computer"

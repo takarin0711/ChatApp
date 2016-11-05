@@ -33,6 +33,7 @@ public class CustomAdapter extends ArrayAdapter<CustomData> {
             convertView = layoutInflater_.inflate(R.layout.list, null);
         }
 
+        // Listの偶数番目を自分(Taka)、奇数番目をComputerとした
         if(position % 2==0){
             convertView = layoutInflater_.inflate(R.layout.list, null);
             ImageView imageView;
@@ -57,15 +58,6 @@ public class CustomAdapter extends ArrayAdapter<CustomData> {
             name= (TextView) convertView.findViewById(R.id.Name2);
             name.setText(item.getNameData());
         }
-
-        // CustomDataのデータをViewの各Widgetにセットする
-        /* ImageView imageView;
-        imageView = (ImageView)convertView.findViewById(R.id.imageView);
-        imageView.setImageBitmap(item.getImageData());
-
-        TextView textView;
-        textView = (TextView) convertView.findViewById(R.id.textView);
-        textView.setText(item.getTextData()); */
 
         return convertView;
     }

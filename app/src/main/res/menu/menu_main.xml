@@ -7,4 +7,12 @@
         android:orderInCategory="100"
         android:title="@string/action_settings"
         app:showAsAction="never" />
+    <item
+        android:title="Input"
+        android:orderInCategory="101"
+        android:id="@+id/Input" />
+    <item
+        android:title="Output"
+        android:orderInCategory="102"
+        android:id="@+id/Output" />
 </menu>

@@ -100,7 +100,6 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
             objects.add(item2);
             SaveText = SaveText + "Computer: " + editText.getText().toString() + "\r\n";
             editText.getEditableText().clear();
-            System.out.println(SaveText);
 
         }
     };
